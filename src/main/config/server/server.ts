@@ -3,7 +3,7 @@ import { CommonEngine } from '@angular/ssr';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
-import { bootstrap } from '../base';
+import bootstrap from '../base/base.server';
 
 export function app(): express.Express {
   const server = express();

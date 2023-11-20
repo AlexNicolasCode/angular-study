@@ -1,7 +1,7 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { routes } from '../../../presentation/route/routes';
+import { routes } from '../../../presentation/route';
 import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {

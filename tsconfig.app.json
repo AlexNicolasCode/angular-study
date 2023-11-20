@@ -7,9 +7,9 @@
     ]
   },
   "files": [
-    "src/main.ts",
-    "src/main.server.ts",
-    "server.ts"
+    "src/main/config/base/base.ts",
+    "src/main/config/base/base.server.ts",
+    "src/main/config/server/server.ts"
   ],
   "include": [
     "src/**/*.d.ts"

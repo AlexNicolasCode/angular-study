@@ -1,9 +1,10 @@
+import express from 'express';
 import { APP_BASE_HREF } from '@angular/common';
 import { CommonEngine } from '@angular/ssr';
-import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
-import bootstrap from '../base/base.server';
+
+import bootstrap from '@/main/config/base/base.server';
 
 export function app(): express.Express {
   const server = express();

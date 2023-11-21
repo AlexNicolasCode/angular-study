@@ -1,3 +1,6 @@
 <header>
-    header
+    <nav>
+        <button (click)="navigateTo('/login')" *ngIf="checkRouteByPath('/sign-up')">login</button>
+        <button (click)="navigateTo('/sign-up')" *ngIf="checkRouteByPath('/login')">sign up</button>
+    </nav>
 </header>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,4 +9,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './unlogged.header.html',
 })
 
-export class HeaderComponent {}
+export class HeaderComponent {
+
+  constructor(private router: Router) {}
+
+  checkRouteByPath(path: string) {
+    return this.router.url === path
+  }
+
+  navigateTo(path: string) {
+    this.router.navigate([path])
+  }
+}

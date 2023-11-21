@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
-import { HeaderComponent } from "@/presentation/component";
+import { HeaderComponent } from "../../../presentation/component";
 
 @Component({
     selector: 'root',

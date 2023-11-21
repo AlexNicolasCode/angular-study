@@ -8,8 +8,6 @@
   },
   "files": [
     "src/main/config/base/base.ts",
-    "src/main/config/base/base.server.ts",
-    "src/main/config/server/server.ts"
   ],
   "include": [
     "src/**/*.d.ts"

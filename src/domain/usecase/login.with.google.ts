@@ -1,5 +1,5 @@
 export interface LoginWithGoogle {
-    loginWithGoogle: () => LoginWithGoogle.Result
+    loginWithGoogle: () => Promise<LoginWithGoogle.Result>
 }
 
 export namespace LoginWithGoogle {

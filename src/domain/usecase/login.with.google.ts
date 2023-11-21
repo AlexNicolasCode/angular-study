@@ -8,5 +8,5 @@ export namespace LoginWithGoogle {
         email?: string
         photoUrl?: string
         isEmailVerified: boolean
-    }
+    } | undefined
 }

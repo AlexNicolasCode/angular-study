@@ -1,4 +1,4 @@
-import { LoginWithGoogle } from "@/domain/usecase"
+import { User } from "@/domain/model"
 
 export interface RemoteLoginWithGoogle {
     loginWithGoogle: () => Promise<RemoteLoginWithGoogle.Result>
@@ -6,7 +6,7 @@ export interface RemoteLoginWithGoogle {
 
 export namespace RemoteLoginWithGoogle {
     export type Result = {
-        user?: LoginWithGoogle.Result
+        user?: User
         token?: string
     }
 }

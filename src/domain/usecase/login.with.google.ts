@@ -1,12 +1,5 @@
-export interface LoginWithGoogle {
-    loginWithGoogle: () => Promise<LoginWithGoogle.Result>
-}
+import { User } from "@/domain/model";
 
-export namespace LoginWithGoogle {
-    export type Result = {
-        name?: string
-        email?: string
-        photoUrl?: string
-        isEmailVerified: boolean
-    } | undefined
+export interface LoginWithGoogle {
+    loginWithGoogle: () => Promise<User | undefined>
 }

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { makeLoginWithGoogle } from '@/main/factory/usecase';
 
+const loginWithGoogle = makeLoginWithGoogle()
+
 @Component({
   selector: 'app-login-page',
   standalone: true,
@@ -11,5 +13,7 @@ import { makeLoginWithGoogle } from '@/main/factory/usecase';
 })
 
 export class LoginPage {
-    loginWithGoogle() { return makeLoginWithGoogle() }
+  async loginWithGoogle() {
+    await loginWithGoogle.loginWithGoogle()
+  }
 }

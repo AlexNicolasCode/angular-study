@@ -21,10 +21,9 @@
       "ES2022",
       "dom"
     ],
-    "rootDir": "src",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["./src/*"]
     }
   },
   "angularCompilerOptions": {

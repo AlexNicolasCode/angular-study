@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, Auth } from "firebase/auth";
 
 import { RemoteLoginWithGoogle } from "@/data";
+import { environment } from "@/main/config/environments";
 
 export class FirebaseAuthentication implements RemoteLoginWithGoogle {
   private readonly auth: Auth;
@@ -9,9 +10,9 @@ export class FirebaseAuthentication implements RemoteLoginWithGoogle {
 
   constructor () {
     const firebaseConfig = initializeApp({
-      apiKey: process.env["FIREBASE_API_KEY"],
-      authDomain: process.env["FIREBASE_AUTH_DOMAIN"],
-      projectId: process.env["FIREBASE_PROJECT_ID"],
+      apiKey: environment.apiKey,
+      authDomain: environment.authDomain,
+      projectId: environment.projectId,
     })
     this.auth = getAuth(firebaseConfig);
     this.provider = new GoogleAuthProvider();

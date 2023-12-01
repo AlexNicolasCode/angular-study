@@ -3,8 +3,10 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, Auth } from "firebase/aut
 
 import { RemoteLoginWithGoogle } from "@/data";
 import { environment } from "@/main/config/environments";
+import { RemoteLoadUser } from "@/data/protocol/remote.load.user";
+import { User } from "@/domain/model";
 
-export class FirebaseAuthentication implements RemoteLoginWithGoogle {
+export class FirebaseAuthentication implements RemoteLoginWithGoogle, RemoteLoadUser {
   private readonly auth: Auth;
   private readonly provider: GoogleAuthProvider;
 
@@ -28,5 +30,16 @@ export class FirebaseAuthentication implements RemoteLoginWithGoogle {
       isEmailVerified: result.user.emailVerified,
     };
     return { user, token: credential?.accessToken }
+  }
+
+  async loadUser (): Promise<User> {
+    const user = this.auth.currentUser;
+    user?.email
+    return {
+      name: user?.displayName ?? undefined,
+      email: user?.email ?? undefined,
+      photoUrl: user?.photoURL ?? undefined,
+      isEmailVerified: user?.emailVerified ?? false,
+    }
   }
 } 
